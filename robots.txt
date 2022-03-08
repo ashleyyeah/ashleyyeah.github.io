@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ashleyyeah.github.io/sitemap.xml

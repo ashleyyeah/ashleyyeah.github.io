@@ -1,0 +1,56 @@
+---
+title: "San Francisco Crime From 2018-Present"
+author: 'Ashley Yeah'
+date: '2022-03-07'
+slug: []
+categories: []
+tags: []
+description: ''
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+library(tidyverse)
+library(ggplot2)
+library(janitor)
+```
+
+As a California Bay Area native, San Francisco has always been a city near and dear to my heart. However, in recent times, there has been an increase in crime in the city so I will be analyzing some data to see what kinds of crimes and what areas these crimes are occuring in.
+
+First I will be loading in the data set sourced from: https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-2018-to-Present/wg3w-h783/data
+
+```{r load dataset}
+sf_crime <- read_csv("police.csv")
+sf_crime <- sf_crime %>% 
+  drop_na("Incident Category")
+```
+
+I will be looking at the frequency of the most common crimes in San Francisco. Let's clean up the dataset and plot the frequency of different crimes, where such a crime has occurred at least 10000 times:
+
+```{r plot crime type, fig.height = 5}
+sf_crime <- clean_names(sf_crime)
+sf_crime <- sf_crime %>% 
+  group_by(incident_category) %>%
+  filter(n() > 10000)
+ggplot(sf_crime, aes(y = reorder(incident_category, incident_category, function(y) length(y)))) +
+  geom_bar(fill = "steelblue") +
+  labs(
+    title = "Crime Count by Category",
+    x = "Frequency",
+    y = "Crime Type"
+) + theme_minimal()
+```
+
+We can see that by far, the most common crime in San Francisco is larceny theft, which is not a surprise because there have been far too many issues with store and car thefts in recent years. How let's take a look at the distribution of crime by neighorhood:
+
+```{r plot crime type and neighborhood, fig.height = 6}
+ggplot(sf_crime, aes(y = reorder(incident_category, incident_category, function(y) length(y)), fill = police_district)) + 
+  geom_bar(position = "fill") + 
+  scale_fill_viridis_d() + 
+  labs(
+    title = "Crime Count by Category and Police District",
+    x = "Percentage", 
+    y = "Crime Type"
+) + theme_minimal() 
+```
+
+It's quite interesting to see that 50\% of drug offenses happen in one neighborhood, which happens to be the Tenderloin. We can also see that for the most common crime of theft, they occur most often in the Central and Northern districts.

@@ -1,0 +1,80 @@
+---
+title: 'Beijing 2022 Winter Olympics Medal Counts Analysis'
+author: 'Ashley Yeah'
+date: '2022-03-07'
+slug: []
+categories: []
+tags: []
+description: ''
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+library(tidyverse)
+library(ggplot2)
+```
+
+I'll be looking at a dataset containing information about athletes who won medals at the 2022 Beijing Winter Olympics. My goal is to figure out the top 10 countries with the most overall medals, as well as the top 10 countries with the most Gold medals. We are counting medals slightly differently from what is normally done as we are counting medals for each athlete that wins a medal, instead of each event, which means that team events will be worth more for a country's medal count. First, we must load this dataset:
+
+```{r load data}
+medals <- read_csv("medals.csv")
+```
+
+Now that we have the dataset with individual athletes and their representative countries, we can use count to get a frequency table. We can then sort this table to see which which 5 countries have the most total medals.
+
+```{r count medals}
+counts <- medals %>% 
+  count(country, sort=TRUE)
+```
+
+Now that we have the counts, we can plot the top 10 countries. I have chosen to rename "United States of America" to "USA" because otherwise the bar plot looks unpleasant:
+
+```{r plot top 10 countries}
+counts <- counts %>%
+  mutate(
+    country = fct_recode(
+      country,
+      USA = "United States of America"
+    )
+  )
+
+ggplot(counts[1:10,], aes(reorder(country, -n), n)) +
+  geom_col(fill = "steelblue") +
+  labs(
+    title = "Total Medal Count by Country",
+    x = "Countries",
+    y = "Medal Count"
+  ) + 
+  theme_minimal()
+
+```
+
+We can see that the Russian Olympic Committee won the most total metals, followed by Canada, the USA, Germany, and Norway. Now, let's look at who won the most gold medals. We follow a similar processs:
+
+
+```{r plot top gold medal winners}
+count_golds <- filter(medals, medal_type == 'Gold') %>% 
+  count(country, sort=TRUE)
+
+count_golds <- count_golds %>%
+  mutate(
+    country = fct_recode(
+      country,
+      USA = "United States of America",
+      China = "People's Republic of China"
+    )
+  )
+
+ggplot(count_golds[1:10,], aes(reorder(country, -n), n)) +
+  geom_col(fill = "steelblue") +
+  labs(
+    title = "Total Gold Medal Count by Country",
+    x = "Countries",
+    y = "Medal Count"
+  ) + 
+  theme_minimal()
+```
+
+We can see that Canada, Norway, and Finland came home as the biggest winners for the top prize.
+
+Data Source: https://www.kaggle.com/piterfm/beijing-2022-olympics
+
