@@ -1,0 +1,21 @@
+---
+title: SpotifyU
+author: 'Ashley Yeah'
+date: '2021-05-06'
+slug: []
+categories: []
+tags: [sql, python]
+description: ''
+---
+
+A web application allowing Spotify users to learn more about the way they listen to music and discover new music of similar tastes.
+
+Technology Used:
+
+* HTML/CSS
+* Flask
+* MySQL
+* Google Cloud Platform
+
+
+[Link](https://github.com/ashleyyeah/SpotifyU)

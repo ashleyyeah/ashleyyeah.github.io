@@ -8,24 +8,6 @@
     <language>en</language>
     <lastBuildDate>Sun, 06 Mar 2022 13:09:13 -0600</lastBuildDate><atom:link href="https://ashleyyeah.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Beijing 2022 Winter Olympics Medal Counts Analysis</title>
-      <link>https://ashleyyeah.github.io/post/2022-03-07-beijing-2022-medal-counts/</link>
-      <pubDate>Mon, 07 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ashleyyeah.github.io/post/2022-03-07-beijing-2022-medal-counts/</guid>
-      <description>I’ll be looking at a dataset containing information about athletes who won medals at the 2022 Beijing Winter Olympics.</description>
-    </item>
-    
-    <item>
-      <title>San Francisco Crime From 2018-Present</title>
-      <link>https://ashleyyeah.github.io/post/2022-03-07-san-francisco-crime/</link>
-      <pubDate>Mon, 07 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ashleyyeah.github.io/post/2022-03-07-san-francisco-crime/</guid>
-      <description>As a California Bay Area native, San Francisco has always been a city near and dear to my heart.</description>
-    </item>
-    
-    <item>
       <title>Resume</title>
       <link>https://ashleyyeah.github.io/resume/</link>
       <pubDate>Sun, 06 Mar 2022 13:09:13 -0600</pubDate>
@@ -41,6 +23,15 @@
       
       <guid>https://ashleyyeah.github.io/about/</guid>
       <description>I am currently pursuing a BS in Computer Science at the University of Illinois, Urbana-Champaign.</description>
+    </item>
+    
+    <item>
+      <title>SpotifyU</title>
+      <link>https://ashleyyeah.github.io/projects/spotifyu/</link>
+      <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ashleyyeah.github.io/projects/spotifyu/</guid>
+      <description>A web application allowing Spotify users to learn more about the way they listen to music and discover new music of similar tastes.</description>
     </item>
     
   </channel>

@@ -5,6 +5,25 @@
     <link>https://ashleyyeah.github.io/tags/</link>
     <description>Recent content in Tags on Ashley Yeah</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://ashleyyeah.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 06 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://ashleyyeah.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python</title>
+      <link>https://ashleyyeah.github.io/tags/python/</link>
+      <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ashleyyeah.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sql</title>
+      <link>https://ashleyyeah.github.io/tags/sql/</link>
+      <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ashleyyeah.github.io/tags/sql/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
